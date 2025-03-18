@@ -32,15 +32,6 @@ dofile(vim.g.base46_cache .. "statusline")
 require "options"
 require "nvchad.autocmds"
 
-require("nvim-tree").setup {
-  filters = {
-    dotfiles = false, -- show dotfiles (including .env)
-  },
-  git = {
-    enable = false, -- disable the .gitignore filtering
-  },
-}
-
 vim.schedule(function()
   require "mappings"
 end)

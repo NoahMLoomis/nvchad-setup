@@ -12,39 +12,36 @@ return {
       require "configs.lspconfig"
     end,
   },
+
   {
-    "kdheepak/lazygit.nvim",
-    lazy = true,
-    cmd = {
-      "LazyGit",
-      "LazyGitConfig",
-      "LazyGitCurrentFile",
-      "LazyGitFilter",
-      "LazyGitFilterCurrentFile",
-    },
-    -- optional for floating window border decoration
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-    },
+    "nvim-telescope/telescope-ui-select.nvim",
+    config = function()
+      require("telescope").setup {
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+              -- Optional: customize the dropdown appearance
+              winblend = 10,
+              previewer = false,
+            },
+          },
+        },
+      }
+      -- load the extension
+      require("telescope").load_extension "ui-select"
+    end,
   },
-  {
-    "github/copilot.vim",
-    event = "InsertEnter",
-    lazy = false,
-  },
+
+  -- test new blink
+  -- { import = "nvchad.blink.lazyspec" },
+
   -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   opts = {
-  --     ensure_installed = {
-  --       "vim",
-  --       "lua",
-  --       "vimdoc",
-  --       "html",
-  --       "css",
-  --     },
-  --   },
+  -- 	"nvim-treesitter/nvim-treesitter",
+  -- 	opts = {
+  -- 		ensure_installed = {
+  -- 			"vim", "lua", "vimdoc",
+  --      "html", "css"
+  -- 		},
+  -- 	},
   -- },
 }

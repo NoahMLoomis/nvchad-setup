@@ -29,8 +29,14 @@ require("lazy").setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
+vim.g.markdown_fenced_languages = {
+  "ts=typescript",
+}
+
+vim.lsp.enable "denols"
+
 require "options"
-require "nvchad.autocmds"
+require "autocmds"
 
 vim.schedule(function()
   require "mappings"

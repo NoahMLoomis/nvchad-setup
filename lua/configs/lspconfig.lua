@@ -1,9 +1,9 @@
 require("nvchad.configs.lspconfig").defaults()
 
 -- local lspconfig = require "lspconfig"
--- local nvlsp = require "nvchad.configs.lspconfig"
+local nvlsp = require "nvchad.configs.lspconfig"
 
-local servers = { "html", "cssls", "typescript-language-server", "denols", "clangd" }
+local servers = { "html", "cssls", "clangd", "ts_ls"}
 
 -- for _, lsp in ipairs(servers) do
 --   lspconfig[lsp].setup {

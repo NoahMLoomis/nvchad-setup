@@ -33,8 +33,6 @@ vim.g.markdown_fenced_languages = {
   "ts=typescript",
 }
 
-vim.lsp.enable "denols"
-
 require "options"
 require "autocmds"
 

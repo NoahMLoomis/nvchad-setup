@@ -2,6 +2,8 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "prettier" },
+    bash = { "shfmt" },
+    sh = { "shfmt" },
     html = { "prettier" },
   },
 

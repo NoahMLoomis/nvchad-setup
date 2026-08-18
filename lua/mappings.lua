@@ -18,3 +18,4 @@ end, { desc = "LSP Code Actions" })
 map("n", "<leader>gb", ":Git blame<CR>")
 
 map("x", "X", '"_x', { desc = "Delete visual selection without clobbering clipboard" })
+map("n", "X", '"_x', { desc = "Delete visual selection without clobbering clipboard" })

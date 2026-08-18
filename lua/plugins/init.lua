@@ -12,18 +12,18 @@ return {
       require "configs.lspconfig"
     end,
   },
-{
-  "nvim-tree/nvim-tree.lua",
-  opts = {
-    filters = {
-      git_ignored = false, -- show gitignored files/folders
-      dotfiles = false,    -- optional: also show hidden dotfiles
-    },
-    git = {
-      ignore = false, -- don't dim/hide based on git status
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      filters = {
+        git_ignored = false, -- show gitignored files/folders
+        dotfiles = false, -- optional: also show hidden dotfiles
+      },
+      git = {
+        ignore = false, -- don't dim/hide based on git status
+      },
     },
   },
-},
   {
     "github/copilot.vim",
     lazy = true,
@@ -31,25 +31,29 @@ return {
     config = function()
       -- Set your Accept suggestion key
       vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
-      
+
       -- Keys to manually toggle Copilot
       vim.keymap.set("n", "<leader>cd", ":Copilot disable <CR>", {})
       vim.keymap.set("n", "<leader>ce", ":Copilot enable <CR>", {})
     end,
   },
-{
-  "nvim-telescope/telescope.nvim",
-  opts = {
-    defaults = {
-      file_ignore_patterns = {}, -- don't hardcode ignores
-    },
-    pickers = {
-      find_files = {
-        hidden = true,      -- show dotfiles
-        no_ignore = true,   -- show .gitignore'd files
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        file_ignore_patterns = {
+          "node_modules/**/*",
+          "venv",
+          ".venv",
+        }, -- don't hardcode ignores
+      },
+      pickers = {
+        find_files = {
+          hidden = true, -- show dotfiles
+          no_ignore = true, -- show .gitignore'd files
+        },
       },
     },
-  },
   },
   {
     "nvim-telescope/telescope-ui-select.nvim",

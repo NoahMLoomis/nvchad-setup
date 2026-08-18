@@ -1,6 +1,11 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
+-- Give external tools a stable address for this Neovim instance.
+local nvim_server = "/tmp/nvim-" .. (vim.env.USER or "user") .. ".sock"
+vim.fn.serverstart(nvim_server)
+vim.env.NVIM = nvim_server
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 

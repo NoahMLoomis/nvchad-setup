@@ -3,8 +3,20 @@ require("nvchad.configs.lspconfig").defaults()
 -- local lspconfig = require "lspconfig"
 -- local nvlsp = require "nvchad.configs.lspconfig"
 
-local servers =
-  { "html", "cssls", "clangd", "ts_ls", "svelte", "ruff", "pyright", "tailwindcss", "bashls", "biome", "lua_ls", "intelephense" }
+local servers = {
+  "html",
+  "cssls",
+  "clangd",
+  "ts_ls",
+  -- "ruff",
+  "svelte",
+  "pyright",
+  "tailwindcss",
+  "bashls",
+  "biome",
+  "lua_ls",
+  "intelephense",
+}
 
 -- for _, lsp in ipairs(servers) do
 --   lspconfig[lsp].setup {
